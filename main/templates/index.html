@@ -11,7 +11,7 @@
 
     <h1>Поиск постов</h1>
 
-    <form action="post_by_tag.html" method="get">
+    <form action="/search" method="get">
         <p>По вхождению слова</p>
         <input type="text" name="s">
         <input type="submit" value="Найти" class="button">
@@ -19,7 +19,19 @@
 
     <hr>
 
-    <a href="post_form.html" class="button">Добавить пост</a>
+    <a href="/post" class="button">Добавить пост</a>
+
+    <hr>
+
+    {% for post in posts %}
+
+    <div class="post">
+        <img src="{{ post.pic }}" width="100%" alt="">
+        <p>{{ post.content }}</p>
+    </div>
+    <hr>
+
+    {% endfor %}
 
 </main>
 </body>
